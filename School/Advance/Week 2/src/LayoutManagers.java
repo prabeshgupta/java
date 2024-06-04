@@ -16,16 +16,12 @@
          * CardLayout -> Switch between different panels
          */
 
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
 
 public class LayoutManagers {
     public static void main(String[] args) {
@@ -54,7 +50,7 @@ public class LayoutManagers {
         // jPanel.add(jBT, BorderLayout.SOUTH);
 
         jFrame.add(jPanel);
-        jFrame.setDefaultCloseOperation(jFrame.EXIT_ON_CLOSE);
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.setVisible(true);
     }
 }
