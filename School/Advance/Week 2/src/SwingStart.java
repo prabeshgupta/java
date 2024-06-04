@@ -25,6 +25,8 @@ public class SwingStart {
         // jFrame.setBounds(200, 200, 500, 400);
         jFrame.setResizable(false);
 
+        // Swing Components
+
         JButton jb = new JButton("Click Me");
         // jb.setEnabled(false);
 
@@ -34,7 +36,7 @@ public class SwingStart {
         jTF.setHorizontalAlignment(JTextField.CENTER);
         jTF.setEditable(false);
 
-        // Controlling components
+        // Container for storing and organizing components
         JPanel jp = new JPanel();
         jp.add(jb);
         jp.add(jTF);
