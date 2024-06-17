@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+
 import java.awt.*;
 
 public class Registration {
@@ -10,6 +12,7 @@ public class Registration {
     JTextArea txtAddress;
     JButton btnSave, btnReset;
     JPanel pnlMain, pnlGender;
+    DefaultTableModel defaultTableModel;
     JTable jTable;
     JScrollPane jScrollPane; // Add JScrollPane
 
@@ -75,10 +78,6 @@ public class Registration {
         txtAddress = new JTextArea();
         txtAddress.setPreferredSize(dimTextArea);
 
-        // Button
-        btnSave = new JButton("Save");
-        btnReset = new JButton("Reset");
-
         // CheckBox
         chkStudent = new JCheckBox("Student");
         chkStudent.setPreferredSize(dimLbl);
@@ -87,16 +86,28 @@ public class Registration {
         headers = new String[] { "Name", "isStudent", "Gender", "Age", "Address" };
 
         tData = new Object[][] {
-                { "Prabesh", true, "Male", "Kathmandu" },
-                { "Upahar", true, "Female", "Ontario" },
-                { "John", false, "Male", "New York" }
+                { "Prabesh", true, "Male", 22, "Kathmandu" },
+                { "Upahar", true, "Female", 21, "Ontario" },
+                { "John", false, "Male", 44, "New York" },
+                { "Prabesh", true, "Male", 22, "Kathmandu" },
+                { "Upahar", true, "Female", 21, "Ontario" },
+                { "John", false, "Male", 44, "New York" },
+                { "Prabesh", true, "Male", 22, "Kathmandu" },
+                { "Upahar", true, "Female", 21, "Ontario" },
+                { "John", false, "Male", 44, "New York" },
         };
 
-        jTable = new JTable(tData, headers);
+        defaultTableModel = new DefaultTableModel(tData, headers);
+        jTable = new JTable(defaultTableModel);
 
         // Add JTable to JScrollPane
         jScrollPane = new JScrollPane(jTable);
+        jScrollPane.setPreferredSize(new Dimension(425, 150));
         jTable.setFillsViewportHeight(true);
+
+        // Button
+        btnSave = new JButton("Save");
+        btnReset = new JButton("Reset");
 
         pnlMain = new JPanel(true);
         pnlMain.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
@@ -111,9 +122,9 @@ public class Registration {
         pnlMain.add(txtAge);
         pnlMain.add(lblAddress);
         pnlMain.add(txtAddress);
+        pnlMain.add(jScrollPane);
         pnlMain.add(btnSave);
         pnlMain.add(btnReset);
-        pnlMain.add(jScrollPane);
 
         fraMain.add(pnlMain);
         fraMain.setVisible(true);
