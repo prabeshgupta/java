@@ -103,7 +103,7 @@ public class Registration {
         // Add JTable to JScrollPane
         jScrollPane = new JScrollPane(jTable);
         jScrollPane.setPreferredSize(new Dimension(425, 150));
-        jTable.setFillsViewportHeight(true);
+        // jTable.setFillsViewportHeight(true);
 
         // Button
         btnSave = new JButton("Save");
